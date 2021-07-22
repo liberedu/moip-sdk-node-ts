@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
-		"test": "yarn build && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' NODE_PATH=. nyc mocha -r ts-node/register 'test/**/*.spec.ts' && yarn build-coverage",
+		"test": "yarn build && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' && NODE_PATH=. nyc mocha --timeout 30000 -r ts-node/register 'test/**/*.spec.ts' && yarn build-coverage",
 		"build-coverage": "NODE_PATH=. nyc report --reporter=text-lcov | coveralls",
 		"lint": "eslint index.js lib/**  test/** --ext .js"
 	},

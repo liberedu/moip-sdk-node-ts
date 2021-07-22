@@ -1,9 +1,6 @@
 export default {
-	ownId: '',
-	id: '',
 	orders: [
 		{
-			ownId: '',
 			amount: {
 				currency: 'BRL',
 				subtotals: {
@@ -19,7 +16,6 @@ export default {
 				},
 			],
 			customer: {
-				ownId: '',
 				fullname: 'Joao Sousa',
 				email: 'joao.sousa@email.com',
 				birthDate: '1988-12-30',
@@ -53,7 +49,6 @@ export default {
 			],
 		},
 		{
-			ownId: '',
 			amount: {
 				currency: 'BRL',
 				subtotals: {
@@ -69,7 +64,6 @@ export default {
 				},
 			],
 			customer: {
-				ownId: '',
 				fullname: 'Joao Sousa',
 				email: 'joao.sousa@email.com',
 				birthDate: '1988-12-30',
@@ -113,4 +107,4 @@ export default {
 			],
 		},
 	],
-};
+} as any;

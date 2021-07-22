@@ -1,4 +1,4 @@
-import { HttpOpts } from 'lib/client/types';
+import { HttpOpts } from '../client/types';
 import api from '../client/api';
 
 export type Transfer = {

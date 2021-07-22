@@ -22,7 +22,9 @@ describe('Account', () => {
 				response.statusCode.should.be.eql(201);
 				done();
 			})
-			.catch((err: any) => done(err.statusCode));
+			.catch((err: any) => {
+				done(err.statusCode);
+			});
 	});
 
 	it('Should successfully verify that an account exists', (done) => {
@@ -32,7 +34,9 @@ describe('Account', () => {
 				response.statusCode.should.be.eql(200);
 				done();
 			})
-			.catch((err: any) => done(err.statusCode));
+			.catch((err: any) => {
+				done(err.statusCode);
+			});
 	});
 
 	it('Should successfully verify that an account does not exists', (done) => {

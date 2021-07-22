@@ -17,7 +17,7 @@ const environment = (isProduction: boolean) => {
 };
 
 const authorization = (opts: AuthorizationOpts) => {
-	let auth;
+	let auth: string;
 	if (opts.accessToken) {
 		auth = 'OAuth ' + opts.accessToken;
 	} else if (opts.token && opts.key) {

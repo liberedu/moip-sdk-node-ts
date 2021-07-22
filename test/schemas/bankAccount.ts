@@ -12,4 +12,4 @@ export default {
 		},
 		fullname: 'Demo Moip',
 	},
-};
+} as any;

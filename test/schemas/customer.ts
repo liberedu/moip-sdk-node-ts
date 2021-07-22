@@ -21,5 +21,4 @@ export default {
 		state: 'SP',
 		country: 'BRA',
 	},
-	ownId: '',
-};
+} as any;

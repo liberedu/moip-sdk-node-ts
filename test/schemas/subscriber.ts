@@ -1,5 +1,4 @@
 export default {
-	code: '',
 	email: 'nome@exemplo.com.br',
 	fullname: 'Nome Sobrenome',
 	cpf: '22222222222',
@@ -26,4 +25,4 @@ export default {
 			expiration_year: '18',
 		},
 	},
-};
+} as any;

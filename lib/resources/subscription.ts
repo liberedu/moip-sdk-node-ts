@@ -1,4 +1,4 @@
-import { HttpConfig, HttpOpts } from 'lib/client/types';
+import { HttpConfig, HttpOpts } from '../client/types';
 import api from '../client/api_assinaturas';
 import { NotificationPreferences } from './notification';
 

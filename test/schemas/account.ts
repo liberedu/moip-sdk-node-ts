@@ -26,4 +26,4 @@ export default {
 		},
 	},
 	type: 'MERCHANT',
-};
+} as any;

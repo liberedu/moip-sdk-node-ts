@@ -1,6 +1,4 @@
 export default {
-	id: '',
-	delayCapture: false,
 	installmentCount: 1,
 	fundingInstrument: {
 		method: 'CREDIT_CARD',
@@ -21,13 +19,4 @@ export default {
 			},
 		},
 	},
-	amount: {
-		total: '',
-	},
-	status: '',
-	events: '',
-	receivers: '',
-	_links: '',
-	createdAt: '',
-	updatedAt: '',
-};
+} as any;

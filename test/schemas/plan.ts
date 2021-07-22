@@ -15,5 +15,4 @@ export default {
 		days: 30,
 		enabled: false,
 	},
-	code: '',
-};
+} as any;

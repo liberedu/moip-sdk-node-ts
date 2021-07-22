@@ -1,7 +1,4 @@
 export default {
-	ownId: '',
-	id: '',
-	status: '',
 	amount: {
 		currency: 'BRL',
 		subtotals: {
@@ -17,7 +14,6 @@ export default {
 		},
 	],
 	customer: {
-		ownId: '',
 		fullname: 'Jose Silva',
 		email: 'jose_silva0@email.com',
 		birthDate: '1988-12-30',
@@ -41,7 +37,4 @@ export default {
 			zipCode: '01234000',
 		},
 	},
-	createdAt: '',
-	updatedAt: '',
-	_links: '',
-};
+} as any;

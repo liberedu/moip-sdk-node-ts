@@ -2,7 +2,7 @@ import api from '../client/api';
 import { endpoints } from '../client/endpoints';
 import Promise from 'bluebird';
 import snakeCaseKeys from 'snakecase-keys';
-import { HttpConfig, HttpOpts } from 'lib/client/types';
+import { HttpConfig, HttpOpts } from '../client/types';
 
 const getAuthorizeUrl = (
 	opts: HttpOpts,

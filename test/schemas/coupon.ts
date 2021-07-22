@@ -13,8 +13,7 @@ export default {
 	max_redemptions: 1000,
 	expiration_date: {
 		year: 2020,
-		month: Number('08'),
-		day: Number('01'),
+		month: '08',
+		day: '01',
 	},
-	code: '',
-};
+} as any;

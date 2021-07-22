@@ -1,4 +1,4 @@
-import { HttpOpts } from 'lib/client/types';
+import { HttpOpts } from '../client/types';
 import api from '../client/api';
 
 const get = (opts: HttpOpts, _id: string) => api.get(opts, '/refunds', _id);

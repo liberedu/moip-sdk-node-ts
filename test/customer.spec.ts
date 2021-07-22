@@ -26,20 +26,20 @@ describe('Moip Customers', () => {
 			.create(customerModel)
 			.then(({ body }: { body: any }) => {
 				body.should.have.property('id');
-				Object.assign(customerModel, { id: body.id });
+				customerModel.id = body.id;
 				body.should.be.jsonSchema(customerModel);
 				done();
 			})
-			.catch((err: any) => done(err.statusCode));
+			.catch((err: any) => {
+				done(err.statusCode);
+			});
 	});
 
 	it('Successfully get a customer', (done) => {
-		moip.customer
-			.getOne(customerModel.ownId)
-			.then(({ body }: { body: any }) => {
-				body.should.be.jsonSchema(customerModel);
-				done();
-			});
+		moip.customer.getOne(customerModel.id).then(({ body }: { body: any }) => {
+			body.should.be.jsonSchema(customerModel);
+			done();
+		});
 	});
 
 	it('Fail to get a customer with non-existent id', (done) => {

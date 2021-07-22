@@ -21,10 +21,8 @@ describe('Moip Escrow', () => {
 	});
 
 	before((done) => {
-		order = Object.assign(orderModel, { ownId: shortid.generate() }) as any;
-		order = Object.assign(orderModel.customer, {
-			ownId: shortid.generate(),
-		}) as any;
+		orderModel.ownId = shortid.generate();
+		orderModel.customer.ownId = shortid.generate();
 		done();
 	});
 
