@@ -1,58 +1,66 @@
 {
-  "name": "moip-sdk-node",
-  "version": "1.2.4",
-  "description": "Moip v2 API wrapper",
-  "main": "index.js",
-  "scripts": {
-    "build": "babel --presets es2015 -d dist/ lib/",
-    "test": "npm run build && NODE_PATH=. nyc mocha --timeout 30000 --compilers js:babel-core/register test/index.js && npm run build-coverage",
-    "build-coverage": "NODE_PATH=. nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint index.js lib/**  test/** --ext .js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moip/moip-sdk-node.git"
-  },
-  "keywords": [
-    "Moip",
-    "Moipv2",
-    "Nodejs",
-    "API"
-  ],
-  "author": "Igor Lopes",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/moip/moip-sdk-node/issues"
-  },
-  "homepage": "https://github.com/moip/moip-sdk-node#readme",
-  "dependencies": {
-    "async": "^2.6.0",
-    "babel-polyfill": "^6.26.0",
-    "bluebird": "^3.5.1",
-    "coveralls": "^3.0.2",
-    "gerar-cpf": "^2.0.1",
-    "lodash": "^4.17.10",
-    "query-string": "^6.1.0",
-    "request": "^2.83.0",
-    "request-promise": "^4.2.2",
-    "safe-buffer": "^5.1.1",
-    "snakecase-keys": "^1.1.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "chai": "^4.1.0",
-    "chai-json-schema": "^1.5.0",
-    "eslint": "^4.4.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^3.4.2",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^11.3.0",
-    "shortid": "^2.2.8"
-  }
+	"name": "moip-sdk-node",
+	"version": "1.2.4",
+	"description": "Moip v2 API wrapper",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "yarn build && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' NODE_PATH=. nyc mocha -r ts-node/register 'test/**/*.spec.ts' && yarn build-coverage",
+		"build-coverage": "NODE_PATH=. nyc report --reporter=text-lcov | coveralls",
+		"lint": "eslint index.js lib/**  test/** --ext .js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/moip/moip-sdk-node.git"
+	},
+	"keywords": [
+		"Moip",
+		"Moipv2",
+		"Nodejs",
+		"API"
+	],
+	"author": "Igor Lopes",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/moip/moip-sdk-node/issues"
+	},
+	"homepage": "https://github.com/moip/moip-sdk-node#readme",
+	"dependencies": {
+		"async": "^2.6.0",
+		"babel-polyfill": "^6.26.0",
+		"bluebird": "^3.5.1",
+		"coveralls": "^3.0.2",
+		"gerar-cpf": "^2.0.1",
+		"lodash": "^4.17.21",
+		"query-string": "^6.1.0",
+		"request": "^2.83.0",
+		"request-promise": "^4.2.2",
+		"safe-buffer": "^5.1.1",
+		"snakecase-keys": "^4.0.2",
+		"typescript": "^4.3.5"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.21",
+		"@types/lodash": "^4.14.171",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "^16.4.0",
+		"@types/request-promise": "^4.1.48",
+		"@types/shortid": "^0.0.29",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"chai": "^4.1.0",
+		"chai-json-schema": "^1.5.0",
+		"eslint": "^4.4.1",
+		"eslint-config-standard": "^10.2.1",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-node": "^5.1.1",
+		"eslint-plugin-promise": "^3.5.0",
+		"eslint-plugin-standard": "^3.0.1",
+		"mocha": "^3.4.2",
+		"mocha-lcov-reporter": "^1.3.0",
+		"nyc": "^11.3.0",
+		"shortid": "^2.2.8",
+		"ts-node": "^10.1.0"
+	}
 }

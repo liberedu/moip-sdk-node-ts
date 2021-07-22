@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"alwaysStrict": false,
+		"declaration": false,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"sourceMap": false,
+		"inlineSourceMap": false,
+		"inlineSources": false,
+		"lib": ["es2018"],
+		"noFallthroughCasesInSwitch": false,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"skipLibCheck": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": false,
+		"target": "ES2018",
+		"types": ["node", "mocha"],
+		"baseUrl": ".",
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "dist"]
+}

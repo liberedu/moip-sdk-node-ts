@@ -4,5 +4,5 @@ moip-sdk-node.iml
 .DS_Store
 .nyc_output
 yarn-error.log
-
+dist
 moip.js
