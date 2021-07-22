@@ -12,7 +12,7 @@ export default {
 	},
 	max_redemptions: 1000,
 	expiration_date: {
-		year: 2020,
+		year: 2022,
 		month: '08',
 		day: '01',
 	},
