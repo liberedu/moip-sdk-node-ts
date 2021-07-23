@@ -7,17 +7,29 @@ export type Order = {
 	ownId: '1521656695';
 	amount: {
 		currency: 'BRL';
-		subtotals: {
+		subtotals?: {
 			shipping: number;
 		};
 	};
 	items: Array<{
 		product: string;
+		category?: string;
 		quantity: number;
-		detail: string;
+		detail?: string;
 		price: number;
 	}>;
 	customer: Customer;
+	receivers?: {
+		type: string;
+		feePayor: boolean;
+		moipAccount: {
+			id: string;
+		};
+		amount: {
+			fixed?: number;
+			percentual?: number;
+		};
+	};
 };
 
 export type RefundMethod = 'CREDIT_CARD' | 'MOIP_ACCOUNT' | 'BANK_ACCOUNT';
