@@ -1,6 +1,6 @@
 <img src="https://gist.githubusercontent.com/joaolucasl/00f53024cecf16410d5c3212aae92c17/raw/1789a2131ee389aeb44e3a9d5333f59cfeebc089/moip-icon.png" align="right" />
 
-# Moip SDK Node
+# Moip SDK Node TS
 
 > The easiest way and fastest way to integrate Moip to your Node application
 > Node.js module to integrate Moip v2 and subscriptions API
