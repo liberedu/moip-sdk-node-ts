@@ -1,8 +1,11 @@
 {
 	"name": "moip-sdk-node-ts",
-	"version": "1.2.4",
+	"version": "2.0.2",
 	"description": "Moip v2 API wrapper",
 	"main": "index.js",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsc",
 		"test": "yarn build && env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' && NODE_PATH=. nyc mocha --timeout 30000 -r ts-node/register 'test/index.ts' && yarn build-coverage",
