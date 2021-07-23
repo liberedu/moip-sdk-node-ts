@@ -44,7 +44,7 @@ const create = (opts: HttpOpts, account: Account) =>
 
 const getOne = (opts: HttpOpts, _id: string) => api.get(opts, '/accounts', _id);
 
-const exists = (opts: HttpOpts, _query: { filters: Record<string, any> }) =>
+const exists = (opts: HttpOpts, _query: Record<string, any>) =>
 	api.get(opts, '/accounts/exists', null, null, getQuerystring(_query));
 
 export default {

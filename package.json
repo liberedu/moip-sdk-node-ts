@@ -1,5 +1,5 @@
 {
-	"name": "moip-sdk-node",
+	"name": "moip-sdk-node-ts",
 	"version": "1.2.4",
 	"description": "Moip v2 API wrapper",
 	"main": "index.js",

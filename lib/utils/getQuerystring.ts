@@ -17,7 +17,7 @@ const getFiltersQuerystring = (filters: any) =>
 const formatQueryStringFilters = (filters: any) =>
 	_.toArray(getFiltersQuerystring(filters)).join('&');
 
-const getQuerystring = (_query: { filters: Record<string, any> }) =>
+const getQuerystring = (_query: Record<string, any>) =>
 	_query &&
 	stringify(
 		Object.assign(
