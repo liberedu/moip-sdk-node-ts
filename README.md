@@ -5,10 +5,6 @@
 > The easiest way and fastest way to integrate Moip to your Node application
 > Node.js module to integrate Moip v2 and subscriptions API
 
-[![Build Status](https://travis-ci.org/moip/moip-sdk-node.svg?branch=master)](https://travis-ci.org/moip/moip-sdk-node)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![Coverage Status](https://coveralls.io/repos/github/moip/moip-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/moip/moip-sdk-node?branch=master)
-
 **Summary**
 
 - [Installing](#installing)
@@ -79,14 +75,13 @@
 - [Useful Links](#useful-links)
 - [License](#license)
 - [Contributors](#contributors)
-- [Slack Community](#slack-community-) [![Slack](https://user-images.githubusercontent.com/4432322/37355972-ba0e9f32-26c3-11e8-93d3-39917eb24109.png)](https://slackin-cqtchmfquq.now.sh)
 
 # Installing
 
-Npm:
+Yarn:
 
 ```
-npm install moip-sdk-node --save
+yarn add moip-sdk-node-ts
 ```
 
 # Getting started
@@ -94,7 +89,7 @@ npm install moip-sdk-node --save
 [Prerequisite - Create an app (access token)](https://documentao-moip.readme.io/v2.0/reference#1-criar-um-app)
 
 ```javascript
-const moip = require('moip-sdk-node').default({
+const moip = require('moip-sdk-node-ts').default({
 	accessToken: 'your-access-token',
 	// token: 'your-token',
 	// key: 'your-key',
@@ -105,7 +100,7 @@ const moip = require('moip-sdk-node').default({
 If you are using **import** syntax:
 
 ```javascript
-import moipSdk from 'moip-sdk-node';
+import moipSdk from 'moip-sdk-node-ts';
 const moip = moipSdk({
 	accessToken: 'your-access-token',
 	// token: 'your-token',
@@ -1190,10 +1185,6 @@ moip.webhook
 [Simulating different payment statuses](https://dev.moip.com.br/docs/simulando-diferentes-status-de-pagamento)
 
 [Search filters](https://dev.moip.com.br/reference#filtros-de-busca)
-
-## License
-
-[The MIT License](https://github.com/moip/moip-sdk-node/blob/master/LICENSE)
 
 ## Contributors
 
