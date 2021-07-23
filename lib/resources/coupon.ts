@@ -40,10 +40,10 @@ const inactivate = (opts: HttpOpts, _code: string) =>
 	api.put(opts, `/coupons/${_code}/inactive`);
 
 export default {
-	getOne,
-	getAll,
-	create,
-	associate,
-	activate,
-	inactivate,
+	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	create: create as unknown as OmitFirstArg<typeof create>,
+	associate: associate as unknown as OmitFirstArg<typeof associate>,
+	activate: activate as unknown as OmitFirstArg<typeof activate>,
+	inactivate: inactivate as unknown as OmitFirstArg<typeof inactivate>,
 };

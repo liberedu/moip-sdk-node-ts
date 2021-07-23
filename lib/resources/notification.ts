@@ -19,8 +19,8 @@ const remove = (opts: HttpOpts, _id: string) =>
 	api.remove(opts, `/preferences/notifications/${_id}`);
 
 export default {
-	getOne,
-	getAll,
-	create,
-	remove,
+	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	create: create as unknown as OmitFirstArg<typeof create>,
+	remove: remove as unknown as OmitFirstArg<typeof remove>,
 };

@@ -30,8 +30,8 @@ const remove = (opts: HttpOpts, _id: string) =>
 	api.remove(opts, `/bankaccounts/${_id}`);
 
 export default {
-	create,
-	getOne,
-	getAll,
-	remove,
+	create: create as unknown as OmitFirstArg<typeof create>,
+	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	remove: remove as unknown as OmitFirstArg<typeof remove>,
 };

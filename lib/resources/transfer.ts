@@ -46,8 +46,8 @@ const create = (opts: HttpOpts, transfer: Transfer) =>
 	api.post(opts, '/transfers', transfer);
 
 export default {
-	getOne,
-	getAll,
-	reverse,
-	create,
+	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	reverse: reverse as unknown as OmitFirstArg<typeof reverse>,
+	create: create as unknown as OmitFirstArg<typeof create>,
 };

@@ -39,12 +39,12 @@ const getRefunds = (opts: HttpOpts, _id: string) =>
 	api.get(opts, `/orders/${_id}/refunds`);
 
 export default {
-	getOne,
-	getAll,
-	create,
-	query,
+	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	create: create as unknown as OmitFirstArg<typeof create>,
+	query: query as unknown as OmitFirstArg<typeof query>,
 	refunds: {
-		create: refund,
-		get: getRefunds,
+		refund: refund as unknown as OmitFirstArg<typeof refund>,
+		getRefunds: getRefunds as unknown as OmitFirstArg<typeof getRefunds>,
 	},
 };

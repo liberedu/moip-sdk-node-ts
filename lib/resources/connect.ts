@@ -35,6 +35,8 @@ const generateToken = (opts: HttpOpts, config: HttpConfig) =>
 	});
 
 export default {
-	getAuthorizeUrl,
-	generateToken,
+	getAuthorizeUrl: getAuthorizeUrl as unknown as OmitFirstArg<
+		typeof getAuthorizeUrl
+	>,
+	generateToken: generateToken as unknown as OmitFirstArg<typeof generateToken>,
 };

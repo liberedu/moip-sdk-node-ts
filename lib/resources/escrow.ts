@@ -5,5 +5,5 @@ const release = (opts: HttpOpts, _id: string) =>
 	api.post(opts, `/escrows/${_id}/release`, null);
 
 export default {
-	release,
+	release: release as unknown as OmitFirstArg<typeof release>,
 };

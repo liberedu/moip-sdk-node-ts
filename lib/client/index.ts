@@ -46,7 +46,7 @@ const looper = (result: any, resource: any, authObject: any) =>
 		{}
 	);
 
-const connect = (opts: ConnectOpts) => {
+const connect = (opts: ConnectOpts): typeof resources => {
 	const auth = authorization(opts);
 	const env = environment(opts.production);
 
