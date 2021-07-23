@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/4432322/48435349-66f65b80-e763-11e8-9cb8-6dd8335e62d7.png" align="right" />
+<img src="https://gist.githubusercontent.com/joaolucasl/00f53024cecf16410d5c3212aae92c17/raw/1789a2131ee389aeb44e3a9d5333f59cfeebc089/moip-icon.png" align="right" />
 
 # Moip SDK Node
 
