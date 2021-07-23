@@ -1,6 +1,7 @@
 import { Buffer } from 'safe-buffer';
 import resources from './resources';
 import { bind, reduce, isFunction } from 'lodash';
+import { ConnectRet } from './types';
 
 export interface AuthorizationOpts {
 	accessToken?: string;
@@ -46,7 +47,7 @@ const looper = (result: any, resource: any, authObject: any) =>
 		{}
 	);
 
-const connect = (opts: ConnectOpts): typeof resources => {
+const connect = (opts: ConnectOpts): ConnectRet<typeof resources> => {
 	const auth = authorization(opts);
 	const env = environment(opts.production);
 

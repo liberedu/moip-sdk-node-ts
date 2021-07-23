@@ -61,6 +61,6 @@ const create = (opts: HttpOpts, multiorder: MultiOrder) =>
 	api.post(opts, '/multiorders', multiorder);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	create: create as unknown as OmitFirstArg<typeof create>,
+	getOne: getOne,
+	create: create,
 };

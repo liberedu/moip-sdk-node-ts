@@ -23,9 +23,9 @@ const updateBilling = (
 ) => api.put(opts, `/customers/${_code}/billing_infos`, billingInfo);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	update: update as unknown as OmitFirstArg<typeof update>,
-	updateBilling: updateBilling as unknown as OmitFirstArg<typeof updateBilling>,
+	getOne: getOne,
+	getAll: getAll,
+	create: create,
+	update: update,
+	updateBilling: updateBilling,
 };

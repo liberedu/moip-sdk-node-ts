@@ -38,10 +38,10 @@ const update = (opts: HttpOpts, _code: string, plan: Plan) =>
 	api.put(opts, `/plans/${_code}`, plan);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	activate: activate as unknown as OmitFirstArg<typeof activate>,
-	inactivate: inactivate as unknown as OmitFirstArg<typeof inactivate>,
-	update: update as unknown as OmitFirstArg<typeof update>,
+	getOne: getOne,
+	getAll: getAll,
+	create: create,
+	activate: activate,
+	inactivate: inactivate,
+	update: update,
 };

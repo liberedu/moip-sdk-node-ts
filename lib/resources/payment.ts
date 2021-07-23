@@ -52,17 +52,17 @@ const getRefunds = (opts: HttpOpts, _id: string) =>
 	api.get(opts, `/payments/${_id}/refunds`);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	preAuthorizationCapture: preAuthorizationCapture as unknown as OmitFirstArg<
+	getOne: getOne,
+	create: create,
+	preAuthorizationCapture: preAuthorizationCapture,
 		typeof preAuthorizationCapture
 	>,
-	preAuthorizationCancel: preAuthorizationCancel as unknown as OmitFirstArg<
+	preAuthorizationCancel: preAuthorizationCancel,
 		typeof preAuthorizationCancel
 	>,
-	_authorize: _authorize as unknown as OmitFirstArg<typeof _authorize>,
+	_authorize: _authorize,
 	refunds: {
-		refund: refund as unknown as OmitFirstArg<typeof refund>,
-		getRefunds: getRefunds as unknown as OmitFirstArg<typeof getRefunds>,
+		refund: refund,
+		getRefunds: getRefunds,
 	},
 };

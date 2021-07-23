@@ -40,12 +40,12 @@ const preAuthorizationCancel = (opts: HttpOpts, _id: string) =>
 	api.post(opts, `/multipayments/${_id}/void`);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	preAuthorizationCapture: preAuthorizationCapture as unknown as OmitFirstArg<
+	getOne: getOne,
+	create: create,
+	preAuthorizationCapture: preAuthorizationCapture,
 		typeof preAuthorizationCapture
 	>,
-	preAuthorizationCancel: preAuthorizationCancel as unknown as OmitFirstArg<
+	preAuthorizationCancel: preAuthorizationCancel,
 		typeof preAuthorizationCancel
 	>,
 };

@@ -9,3 +9,9 @@ export type HttpOpts = {
 };
 
 export type Environments = 'sandbox' | 'production';
+
+export type ConnectRet<Ops> = {
+	[K in keyof Ops]: Ops[K] extends Record<string, any>
+		? { [K2 in keyof Ops[K]]: OmitFirstArg<Ops[K][K2]> }
+		: Ops[K];
+};

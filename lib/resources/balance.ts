@@ -4,5 +4,5 @@ import api from '../client/api';
 const getOne = (opts: HttpOpts) => api.get(opts, '/balances');
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
+	getOne: getOne,
 };

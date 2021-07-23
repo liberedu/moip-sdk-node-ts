@@ -64,25 +64,25 @@ const createNotification = (
 ) => api.post(opts, '/users/preferences', notification);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	update: update as unknown as OmitFirstArg<typeof update>,
-	updatePaymentMethod: updatePaymentMethod as unknown as OmitFirstArg<
+	getOne: getOne,
+	getAll: getAll,
+	create: create,
+	update: update,
+	updatePaymentMethod: updatePaymentMethod,
 		typeof updatePaymentMethod
 	>,
-	suspend: suspend as unknown as OmitFirstArg<typeof suspend>,
-	activate: activate as unknown as OmitFirstArg<typeof activate>,
-	cancel: cancel as unknown as OmitFirstArg<typeof cancel>,
-	getOneInvoice: getOneInvoice as unknown as OmitFirstArg<typeof getOneInvoice>,
-	getAllInvoices: getAllInvoices as unknown as OmitFirstArg<
+	suspend: suspend,
+	activate: activate,
+	cancel: cancel,
+	getOneInvoice: getOneInvoice,
+	getAllInvoices: getAllInvoices,
 		typeof getAllInvoices
 	>,
-	getOnePayment: getOnePayment as unknown as OmitFirstArg<typeof getOnePayment>,
-	getAllPayments: getAllPayments as unknown as OmitFirstArg<
+	getOnePayment: getOnePayment,
+	getAllPayments: getAllPayments,
 		typeof getAllPayments
 	>,
-	createNotification: createNotification as unknown as OmitFirstArg<
+	createNotification: createNotification,
 		typeof createNotification
 	>,
 };

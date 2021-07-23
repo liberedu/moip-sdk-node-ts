@@ -50,14 +50,14 @@ const removeCreditCard = (opts: HttpOpts, _id: string) =>
 	api.remove(opts, `/fundinginstruments/${_id}`);
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
-	create: create as unknown as OmitFirstArg<typeof create>,
-	query: query as unknown as OmitFirstArg<typeof query>,
-	createCreditCard: createCreditCard as unknown as OmitFirstArg<
+	getOne: getOne,
+	getAll: getAll,
+	create: create,
+	query: query,
+	createCreditCard: createCreditCard,
 		typeof createCreditCard
 	>,
-	removeCreditCard: removeCreditCard as unknown as OmitFirstArg<
+	removeCreditCard: removeCreditCard,
 		typeof removeCreditCard
 	>,
 };

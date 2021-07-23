@@ -14,7 +14,7 @@ const query = (opts: HttpOpts, _query: { filters: Record<string, any> }) =>
 const getAll = (opts: HttpOpts) => api.get(opts, '/webhooks');
 
 export default {
-	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
-	query: query as unknown as OmitFirstArg<typeof query>,
-	getAll: getAll as unknown as OmitFirstArg<typeof getAll>,
+	getOne: getOne,
+	query: query,
+	getAll: getAll,
 };
