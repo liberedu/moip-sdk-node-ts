@@ -10,6 +10,8 @@ const moip = connect(auth);
 chai.should();
 chai.use(require('chai-json-schema'));
 
+let preAuthorizedMultiPayment: boolean;
+
 describe('Moip Multipayments', () => {
 	before((done) => {
 		multiorderModel.ownId = shortid.generate();
@@ -149,6 +151,7 @@ describe('Moip Multipayment Pre-Authorization Cancel', () => {
 			.then(({ body }: { body: any }) => {
 				body.should.have.property('id');
 				multipaymentModel.id = body.id;
+				preAuthorizedMultiPayment = body.id;
 				done();
 			})
 			.catch(done);
@@ -156,7 +159,7 @@ describe('Moip Multipayment Pre-Authorization Cancel', () => {
 
 	it('Should cancel multipayment pre authorized', (done) => {
 		moip.multipayment
-			.preAuthorizationCancel(multipaymentModel.id)
+			.preAuthorizationCancel(preAuthorizedMultiPayment)
 			.then(({ body }: { body: any }) => {
 				body.status.should.be.eql('CANCELLED');
 				done();
