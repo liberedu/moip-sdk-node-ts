@@ -43,9 +43,5 @@ export default {
 	getOne: getOne,
 	create: create,
 	preAuthorizationCapture: preAuthorizationCapture,
-		typeof preAuthorizationCapture
-	>,
 	preAuthorizationCancel: preAuthorizationCancel,
-		typeof preAuthorizationCancel
-	>,
 };

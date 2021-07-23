@@ -55,14 +55,10 @@ export default {
 	getOne: getOne,
 	create: create,
 	preAuthorizationCapture: preAuthorizationCapture,
-		typeof preAuthorizationCapture
-	>,
 	preAuthorizationCancel: preAuthorizationCancel,
-		typeof preAuthorizationCancel
-	>,
 	_authorize: _authorize,
 	refunds: {
-		refund: refund,
-		getRefunds: getRefunds,
+		create: refund,
+		get: getRefunds,
 	},
 };

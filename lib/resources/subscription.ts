@@ -69,20 +69,12 @@ export default {
 	create: create,
 	update: update,
 	updatePaymentMethod: updatePaymentMethod,
-		typeof updatePaymentMethod
-	>,
 	suspend: suspend,
 	activate: activate,
 	cancel: cancel,
 	getOneInvoice: getOneInvoice,
 	getAllInvoices: getAllInvoices,
-		typeof getAllInvoices
-	>,
 	getOnePayment: getOnePayment,
 	getAllPayments: getAllPayments,
-		typeof getAllPayments
-	>,
 	createNotification: createNotification,
-		typeof createNotification
-	>,
 };

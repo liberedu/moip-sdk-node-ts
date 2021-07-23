@@ -55,9 +55,5 @@ export default {
 	create: create,
 	query: query,
 	createCreditCard: createCreditCard,
-		typeof createCreditCard
-	>,
 	removeCreditCard: removeCreditCard,
-		typeof removeCreditCard
-	>,
 };

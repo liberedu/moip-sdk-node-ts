@@ -56,7 +56,7 @@ export default {
 	create: create,
 	query: query,
 	refunds: {
-		refund: refund,
-		getRefunds: getRefunds,
+		create: refund,
+		get: getRefunds,
 	},
 };

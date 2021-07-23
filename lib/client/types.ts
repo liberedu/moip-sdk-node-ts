@@ -10,8 +10,10 @@ export type HttpOpts = {
 
 export type Environments = 'sandbox' | 'production';
 
-export type ConnectRet<Ops> = {
-	[K in keyof Ops]: Ops[K] extends Record<string, any>
-		? { [K2 in keyof Ops[K]]: OmitFirstArg<Ops[K][K2]> }
-		: Ops[K];
+export type ConnectRet<Opt> = {
+	[K in keyof Opt]: Opt[K] extends (...args: any) => any
+		? OmitFirstArg<Opt[K]>
+		: Opt[K] extends Record<string, any>
+		? ConnectRet<Opt[K]>
+		: Opt[K];
 };
