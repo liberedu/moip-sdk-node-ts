@@ -19,7 +19,7 @@ export type Customer = {
 	};
 	shippingAddress: {
 		city: string;
-		complement: string;
+		complement?: string;
 		district: string;
 		street: string;
 		streetNumber: string;
