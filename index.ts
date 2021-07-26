@@ -1,2 +1,3 @@
-import dist from './lib/client/index';
-export default dist;
+import * as Moip from './lib';
+export * from './lib';
+export default Moip;
