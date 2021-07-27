@@ -4,7 +4,7 @@ import { getQuerystring } from '../utils';
 import { Customer } from './customer';
 
 export type Order = {
-	ownId: '1521656695';
+	ownId: string;
 	amount: {
 		currency: 'BRL';
 		subtotals?: {

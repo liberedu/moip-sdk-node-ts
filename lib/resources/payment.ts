@@ -14,7 +14,7 @@ export type CreditCard = {
 	hash: string;
 	holder: {
 		fullname: string;
-		birthdate: string;
+		birthdate?: string;
 		taxDocument: {
 			type: 'CPF' | 'CNPJ';
 			number: string;
@@ -23,6 +23,15 @@ export type CreditCard = {
 			countryCode: string;
 			areaCode: string;
 			number: string;
+		};
+		billingAddress?: {
+			city: string;
+			district: string;
+			street: string;
+			streetNumber: string;
+			zipCode: string;
+			state: string;
+			country: string;
 		};
 	};
 };
