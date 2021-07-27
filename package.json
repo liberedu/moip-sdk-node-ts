@@ -1,6 +1,6 @@
 {
 	"name": "moip-sdk-node-ts",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"description": "Moip v2 API wrapper",
 	"main": "dist/index.js",
 	"files": [
