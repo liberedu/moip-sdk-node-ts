@@ -129,7 +129,7 @@ const query = (opts: HttpOpts, _query: { filters: Record<string, any> }) =>
 	api.get(opts, '/orders', null, null, getQuerystring(_query));
 
 const create = (opts: HttpOpts, order: Order.Create.Payload) =>
-	api.post(opts, '/orders', order) as Order.Create.Response;
+	api.post(opts, '/orders', order) as Promise<Order.Create.Response>;
 
 const refund = (opts: HttpOpts, _id: string, method: RefundMethod) =>
 	api.post(opts, `/orders/${_id}/refunds`, method || null);

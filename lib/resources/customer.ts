@@ -97,7 +97,7 @@ const query = (opts: HttpOpts, _query: { filters: Record<string, any> }) =>
 	api.get(opts, '/customers', null, null, getQuerystring(_query));
 
 const create = (opts: HttpOpts, customer: Customer.Create.Payload) =>
-	api.post(opts, '/customers', customer) as Customer.Create.Response;
+	api.post(opts, '/customers', customer) as Promise<Customer.Create.Response>;
 
 const createCreditCard = (
 	opts: HttpOpts,
