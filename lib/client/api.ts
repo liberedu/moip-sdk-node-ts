@@ -9,7 +9,7 @@ const get = (
 	id?: string | null,
 	config?: HttpConfig | null,
 	qs?: string
-) => {
+): any => {
 	const path = id ? `/${id}` : qs ? `?${qs}` : '';
 	const options = {
 		url:
@@ -33,7 +33,7 @@ const post = (
 	endpoint: string | null,
 	payload?: any,
 	config?: HttpConfig
-) => {
+): any => {
 	const options = {
 		url:
 			config && config.customUrl
@@ -59,7 +59,7 @@ const put = (
 	payload: any,
 	id: string,
 	config?: HttpConfig
-) => {
+): any => {
 	const options = {
 		url:
 			config && config.customUrl
@@ -79,7 +79,7 @@ const put = (
 	return request(options);
 };
 
-const remove = (opts: HttpOpts, endpoint: string) => {
+const remove = (opts: HttpOpts, endpoint: string): any => {
 	const options = {
 		url: `${endpoints[opts.env].v2.url}${endpoint}`,
 		headers: {
