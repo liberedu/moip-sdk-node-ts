@@ -30,7 +30,7 @@ export namespace Order.Create {
 				fixed?: number;
 				percentual?: number;
 			};
-		};
+		}[];
 	};
 
 	export type Response = {
