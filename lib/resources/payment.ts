@@ -135,7 +135,7 @@ const create = (
 		opts,
 		`/orders/${orderId}/payments`,
 		payment
-	) as Payment.Create.Response;
+	) as Promise<Payment.Create.Response>;
 
 const preAuthorizationCapture = (opts: HttpOpts, _id: string) =>
 	api.post(opts, `/payments/${_id}/capture`);
