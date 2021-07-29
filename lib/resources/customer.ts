@@ -8,7 +8,7 @@ export namespace Customer.Create {
 		ownId: string;
 		fullname: string;
 		email: string;
-		birthDate: string;
+		birthDate: string | null;
 		taxDocument: {
 			type: string;
 			number: string;

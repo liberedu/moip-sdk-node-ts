@@ -9,7 +9,9 @@ export namespace Order.Create {
 		amount: {
 			currency: 'BRL';
 			subtotals?: {
-				shipping: number;
+				shipping?: number;
+				addition?: number;
+				discount?: number;
 			};
 		};
 		items: Array<{
@@ -21,7 +23,7 @@ export namespace Order.Create {
 		}>;
 		customer: Customer.Create.Payload & { id?: string };
 		receivers?: {
-			type: string;
+			type: 'PRIMARY' | 'SECONDARY';
 			feePayor: boolean;
 			moipAccount: {
 				id: string;

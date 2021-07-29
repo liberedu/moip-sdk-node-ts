@@ -2,13 +2,99 @@ import { HttpOpts } from '../client/types';
 import api from '../client/api';
 import { endpoints } from '../client/endpoints';
 
-export type Payment = {
-	installmentCount: number;
-	fundingInstrument: {
-		method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT';
-		creditCard: CreditCard;
+export namespace Payment.Create {
+	export type Payload = {
+		installmentCount: number;
+		fundingInstrument: {
+			method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT';
+			creditCard: CreditCard;
+		};
 	};
-};
+
+	export type Response = {
+		id: string;
+		status: string;
+		delayCapture: false;
+		amount: {
+			total: number;
+			gross: number;
+			fees: number;
+			refunds: number;
+			liquid: number;
+			currency: 'BRL';
+		};
+		installmentCount: number;
+		statementDescriptor: string;
+		fundingInstrument: {
+			creditCard: {
+				id: string;
+				brand: string;
+				first6: string;
+				last4: string;
+				store: boolean;
+				holder: {
+					birthdate: string;
+					birthDate: string;
+					taxDocument: {
+						type: string;
+						number: string;
+					};
+					billingAddress: {
+						street: string;
+						streetNumber: string;
+						district: string;
+						city: string;
+						state: string;
+						country: string;
+						zipCode: string;
+					};
+					fullname: string;
+				};
+			};
+			method: string;
+		};
+		fees: {
+			type: string;
+			amount: number;
+		}[];
+		events: {
+			type: string;
+			createdAt: string;
+		}[];
+		receivers: {
+			moipAccount: {
+				id: string;
+				login: string;
+				fullname: string;
+			};
+			type: string;
+			amount: {
+				total: number;
+				refunds: number;
+			};
+		}[];
+		device: {
+			userAgent: string;
+			ip: string;
+			geolocation: {
+				latitude: number;
+				longitude: number;
+			};
+			fingerprint: string;
+		};
+		_links: {
+			self: {
+				href: string;
+			};
+			order: {
+				href: string;
+				title: string;
+			};
+		};
+		createdAt: string;
+		updatedAt: string;
+	};
+}
 
 export type CreditCard = {
 	hash: string;
@@ -40,8 +126,16 @@ export type Refund = {};
 
 const getOne = (opts: HttpOpts, _id: string) => api.get(opts, '/payments', _id);
 
-const create = (opts: HttpOpts, orderId: string, payment: Payment) =>
-	api.post(opts, `/orders/${orderId}/payments`, payment);
+const create = (
+	opts: HttpOpts,
+	orderId: string,
+	payment: Payment.Create.Payload
+) =>
+	api.post(
+		opts,
+		`/orders/${orderId}/payments`,
+		payment
+	) as Payment.Create.Response;
 
 const preAuthorizationCapture = (opts: HttpOpts, _id: string) =>
 	api.post(opts, `/payments/${_id}/capture`);
