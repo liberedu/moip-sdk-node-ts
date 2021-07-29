@@ -1,18 +1,7 @@
 import { HttpConfig, HttpOpts } from '../client/types';
 import api from '../client/api_assinaturas';
-import { NotificationPreferences } from './notification';
-
-export type Subscription = {
-	plan: {
-		code: string;
-	};
-	amount: string;
-	next_invoice_date: {
-		day: string;
-		month: string;
-		year: string;
-	};
-};
+import { NotificationPreferences } from './notification-types';
+import * as types from './subscription-types';
 
 export type SubscriptionPaymentMethod = 'BOLETO' | 'CREDIT_CARD';
 
@@ -23,12 +12,15 @@ const getAll = (opts: HttpOpts) => api.get(opts, '/subscriptions');
 
 const create = (
 	opts: HttpOpts,
-	subscription: Subscription,
+	subscription: types.Subscription,
 	config: HttpConfig
 ) => api.post(opts, '/subscriptions', subscription, config);
 
-const update = (opts: HttpOpts, _code: string, subscription: Subscription) =>
-	api.put(opts, `/subscriptions/${_code}`, subscription);
+const update = (
+	opts: HttpOpts,
+	_code: string,
+	subscription: types.Subscription
+) => api.put(opts, `/subscriptions/${_code}`, subscription);
 
 const updatePaymentMethod = (
 	opts: HttpOpts,

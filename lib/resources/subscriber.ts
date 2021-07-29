@@ -1,25 +1,25 @@
 import { HttpConfig, HttpOpts } from '../client/types';
 import api from '../client/api_assinaturas';
-
-export type Subscriber = {};
-
-export type BillingInfo = {};
+import * as types from './subscriber-types';
 
 const getOne = (opts: HttpOpts, _code: string) =>
 	api.get(opts, `/customers/${_code}`);
 
 const getAll = (opts: HttpOpts) => api.get(opts, '/customers');
 
-const create = (opts: HttpOpts, subscriber: Subscriber, config: HttpConfig) =>
-	api.post(opts, '/customers', subscriber, config);
+const create = (
+	opts: HttpOpts,
+	subscriber: types.Subscriber,
+	config: HttpConfig
+) => api.post(opts, '/customers', subscriber, config);
 
-const update = (opts: HttpOpts, _code: string, subscriber: Subscriber) =>
+const update = (opts: HttpOpts, _code: string, subscriber: types.Subscriber) =>
 	api.put(opts, `/customers/${_code}`, subscriber);
 
 const updateBilling = (
 	opts: HttpOpts,
 	_code: string,
-	billingInfo: BillingInfo
+	billingInfo: types.BillingInfo
 ) => api.put(opts, `/customers/${_code}/billing_infos`, billingInfo);
 
 export default {

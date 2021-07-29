@@ -1,36 +1,16 @@
 import { HttpOpts } from '../client/types';
 import api from '../client/api_assinaturas';
-
-export type Coupon = {
-	code: string;
-	name: string;
-	description: string;
-	discount: {
-		value: number;
-		type: 'percent' | 'amount';
-	};
-	status: 'active' | 'inactive';
-	duration: {
-		type: 'once' | 'repeating' | 'forever';
-		occurrences: 12;
-	};
-	max_redemptions: number;
-	expiration_date: {
-		year: number;
-		month: number;
-		day: number;
-	};
-};
+import * as types from './coupon-types';
 
 const getOne = (opts: HttpOpts, _code: string) =>
 	api.get(opts, `/coupons/${_code}`);
 
 const getAll = (opts: HttpOpts) => api.get(opts, '/coupons');
 
-const create = (opts: HttpOpts, coupon: Coupon) =>
+const create = (opts: HttpOpts, coupon: types.Coupon) =>
 	api.post(opts, '/coupons', coupon);
 
-const associate = (opts: HttpOpts, _code: string, coupon: Coupon) =>
+const associate = (opts: HttpOpts, _code: string, coupon: types.Coupon) =>
 	api.put(opts, `/subscriptions/${_code}`, coupon);
 
 const activate = (opts: HttpOpts, _code: string) =>

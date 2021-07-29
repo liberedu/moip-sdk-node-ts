@@ -1,28 +1,6 @@
 import { HttpOpts } from '../client/types';
 import api from '../client/api';
-
-export type MultiPayment = {
-	installmentCount: number;
-	fundingInstrument: {
-		method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT' | 'WALLET';
-		creditCard: {
-			hash: string;
-			holder: {
-				fullname: string;
-				birthdate: string;
-				taxDocument: {
-					type: 'CPF' | 'CNPJ';
-					number: string;
-				};
-				phone: {
-					countryCode: string;
-					areaCode: string;
-					number: string;
-				};
-			};
-		};
-	};
-};
+import * as types from './multipayment-types';
 
 const getOne = (opts: HttpOpts, _id: string) =>
 	api.get(opts, '/multipayments', _id);
@@ -30,7 +8,7 @@ const getOne = (opts: HttpOpts, _id: string) =>
 const create = (
 	opts: HttpOpts,
 	multiorderId: string,
-	multipayment: MultiPayment
+	multipayment: types.MultiPayment
 ) => api.post(opts, `/multiorders/${multiorderId}/multipayments`, multipayment);
 
 const preAuthorizationCapture = (opts: HttpOpts, _id: string) =>
