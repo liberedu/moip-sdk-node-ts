@@ -1,4 +1,4 @@
-import { Customer } from './customer';
+import { Customer } from './customer-types';
 
 export namespace Order.Create {
 	export type Payload = {
