@@ -17,24 +17,19 @@ import multipayment from '../resources/multipayment';
 import transfer from '../resources/transfer';
 import balance from '../resources/balance';
 
-export * from '../resources/customer';
-export * from '../resources/order';
-export * from '../resources/payment';
-export * from '../resources/escrow';
-export * from '../resources/account';
-export * from '../resources/notification';
-export * from '../resources/connect';
-export * from '../resources/bank-account';
-export * from '../resources/webhook';
-export * from '../resources/plan';
-export * from '../resources/subscriber';
-export * from '../resources/subscription';
-export * from '../resources/coupon';
-export * from '../resources/refund';
-export * from '../resources/multiorder';
-export * from '../resources/multipayment';
-export * from '../resources/transfer';
-export * from '../resources/balance';
+export * from '../resources/customer-types';
+export * from '../resources/order-types';
+export * from '../resources/payment-types';
+export * from '../resources/account-types';
+export * from '../resources/notification-types';
+export * from '../resources/bank-account-types';
+export * from '../resources/plan-types';
+export * from '../resources/subscriber-types';
+export * from '../resources/subscription-types';
+export * from '../resources/coupon-types';
+export * from '../resources/multiorder-types';
+export * from '../resources/multipayment-types';
+export * from '../resources/transfer-types';
 
 export default {
 	customer,
