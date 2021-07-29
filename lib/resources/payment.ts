@@ -4,17 +4,33 @@ import { endpoints } from '../client/endpoints';
 
 export namespace Payment.Create {
 	export type Payload = {
-		installmentCount: number;
+		installmentCount?: number;
+		statementDescriptor?: string;
+		delayCapture?: boolean;
 		fundingInstrument: {
 			method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT';
-			creditCard: CreditCard;
+			creditCard?: CreditCard;
+		};
+		boleto?: {
+			expirationDate: string;
+			instructionLines?: {
+				first: string;
+				second?: string;
+				third?: string;
+			};
+			logoUri?: string;
+		};
+		onlineBankDebit?: {
+			bankNumber: '341';
+			expirationDate?: string;
+			returnUri?: string;
 		};
 	};
 
 	export type Response = {
 		id: string;
 		status: string;
-		delayCapture: false;
+		delayCapture: boolean;
 		amount: {
 			total: number;
 			gross: number;
