@@ -5,7 +5,7 @@ import { CreditCard } from './payment-types';
 import * as types from './customer-types';
 
 const getOne = (opts: HttpOpts, _id: string) =>
-	api.get(opts, '/customers', _id);
+	api.get(opts, '/customers', _id) as Promise<types.Customer.GetOne.Response>;
 
 const getAll = (opts: HttpOpts) => api.get(opts, '/customers');
 

@@ -1,3 +1,13 @@
+export namespace Customer.GetOne {
+	export type Response = Customer.Create.Response;
+}
+
+export namespace Customer.GetAll {
+	export type Response = {
+		customers: Customer.Create.Response[];
+	};
+}
+
 export namespace Customer.Create {
 	export type Payload = {
 		ownId: string;
