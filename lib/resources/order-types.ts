@@ -18,7 +18,7 @@ export namespace Order.Create {
 			detail?: string;
 			price: number;
 		}>;
-		customer: Customer.Create.Payload & { id?: string };
+		customer: Customer.Create.Payload | { id: string };
 		receivers?: {
 			type: 'PRIMARY' | 'SECONDARY';
 			feePayor: boolean;
