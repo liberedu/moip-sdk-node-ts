@@ -63,6 +63,16 @@ export namespace Payment.Create {
 					fullname: string;
 				};
 			};
+			boleto: {
+				lineCode: string;
+				expirationDate: string;
+				instructionLines: {
+					first: string;
+					second: string;
+					third: string;
+				};
+				logoUri: string;
+			};
 			method: string;
 		};
 		fees: {
@@ -101,6 +111,10 @@ export namespace Payment.Create {
 			order: {
 				href: string;
 				title: string;
+			};
+			payBoleto: {
+				printHref: string;
+				redirectHref: string;
 			};
 		};
 		createdAt: string;
