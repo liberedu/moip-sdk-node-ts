@@ -1,39 +1,39 @@
-import request from 'request-promise';
+import axios from 'axios';
 import { endpoints } from './endpoints';
 import pjson from '../../package.json';
 import { HttpConfig, HttpOpts } from './types';
 
-const get = (
+const get = async (
 	opts: HttpOpts,
 	endpoint: string | null,
 	id?: string | null,
 	config?: HttpConfig | null,
 	qs?: string
-): any => {
+): Promise<any> => {
 	const path = id ? `/${id}` : qs ? `?${qs}` : '';
-	const options = {
-		url:
+
+	const response = await axios.request({
+		baseURL:
 			config && config.customUrl
 				? config.customUrl
-				: `${endpoints[opts.env].v2.url}${endpoint}${path}`,
+				: endpoints[opts.env].v2.url,
+		url: `${endpoint}${path}`,
 		headers: {
 			Authorization: opts.auth,
 			'User-Agent': `MoipNodeSDK/${pjson.version} (+https://github.com/moip/moip-sdk-node/)`,
 		},
 		method: 'GET',
-		json: true,
-		resolveWithFullResponse: true,
-	};
+	});
 
-	return request(options).body;
+	return response.data;
 };
 
-const post = (
+const post = async (
 	opts: HttpOpts,
 	endpoint: string | null,
 	payload?: any,
 	config?: HttpConfig
-): any => {
+): Promise<any> => {
 	const options = {
 		url:
 			config && config.customUrl
@@ -50,48 +50,59 @@ const post = (
 		resolveWithFullResponse: true,
 	};
 
-	return request(options).body;
+	const response = await axios.request({
+		baseURL:
+			config && config.customUrl
+				? config.customUrl
+				: endpoints[opts.env].v2.url,
+		url: `${endpoint}`,
+		headers: {
+			Authorization: opts.auth,
+			'User-Agent': `MoipNodeSDK/${pjson.version} (+https://github.com/moip/moip-sdk-node/)`,
+		},
+		method: 'POST',
+		data: payload || null,
+	});
+
+	return response.data;
 };
 
-const put = (
+const put = async (
 	opts: HttpOpts,
 	endpoint: string,
 	payload: any,
 	id: string,
 	config?: HttpConfig
-): any => {
-	const options = {
-		url:
+): Promise<any> => {
+	const response = await axios.request({
+		baseURL:
 			config && config.customUrl
 				? config.customUrl
-				: `${endpoints[opts.env].v2.url}${endpoint}/${id || ''}`,
+				: endpoints[opts.env].v2.url,
+		url: `${endpoint}/${id || ''}`,
 		headers: {
 			Authorization: opts.auth,
 			'User-Agent': `MoipNodeSDK/${pjson.version} (+https://github.com/moip/moip-sdk-node/)`,
 		},
 		method: 'PUT',
-		body: payload,
-		form: config && config.form,
-		json: !config || !config.form,
-		resolveWithFullResponse: true,
-	};
+		data: payload || null,
+	});
 
-	return request(options).body;
+	return response.data;
 };
 
-const remove = (opts: HttpOpts, endpoint: string): any => {
-	const options = {
-		url: `${endpoints[opts.env].v2.url}${endpoint}`,
+const remove = async (opts: HttpOpts, endpoint: string): Promise<any> => {
+	const response = await axios.request({
+		baseURL: `${endpoints[opts.env].v2.url}`,
+		url: `${endpoint}`,
 		headers: {
 			Authorization: opts.auth,
 			'User-Agent': `MoipNodeSDK/${pjson.version} (+https://github.com/moip/moip-sdk-node/)`,
 		},
 		method: 'DELETE',
-		json: true,
-		resolveWithFullResponse: true,
-	};
+	});
 
-	return request(options).body;
+	return response.data;
 };
 
 export default {
