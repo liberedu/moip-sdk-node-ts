@@ -25,7 +25,7 @@ const get = (
 		resolveWithFullResponse: true,
 	};
 
-	return request(options);
+	return request(options).body;
 };
 
 const post = (
@@ -50,7 +50,7 @@ const post = (
 		resolveWithFullResponse: true,
 	};
 
-	return request(options);
+	return request(options).body;
 };
 
 const put = (
@@ -76,7 +76,7 @@ const put = (
 		resolveWithFullResponse: true,
 	};
 
-	return request(options);
+	return request(options).body;
 };
 
 const remove = (opts: HttpOpts, endpoint: string): any => {
@@ -91,7 +91,7 @@ const remove = (opts: HttpOpts, endpoint: string): any => {
 		resolveWithFullResponse: true,
 	};
 
-	return request(options);
+	return request(options).body;
 };
 
 export default {
