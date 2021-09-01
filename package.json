@@ -1,6 +1,6 @@
 {
 	"name": "moip-sdk-node-ts",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Moip v2 API wrapper",
 	"main": "dist/index.js",
 	"files": [
@@ -31,6 +31,7 @@
 	"homepage": "https://github.com/moip/moip-sdk-node#readme",
 	"dependencies": {
 		"async": "^2.6.0",
+		"axios": "^0.21.1",
 		"babel-polyfill": "^6.26.0",
 		"bluebird": "^3.5.1",
 		"coveralls": "^3.0.2",
@@ -38,7 +39,6 @@
 		"lodash": "^4.17.21",
 		"query-string": "^6.1.0",
 		"request": "^2.83.0",
-		"request-promise": "^4.2.2",
 		"safe-buffer": "^5.1.1",
 		"snakecase-keys": "^4.0.2",
 		"typescript": "^4.3.5"
