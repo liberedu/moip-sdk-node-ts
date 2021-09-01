@@ -34,22 +34,6 @@ const post = async (
 	payload?: any,
 	config?: HttpConfig
 ): Promise<any> => {
-	const options = {
-		url:
-			config && config.customUrl
-				? config.customUrl
-				: `${endpoints[opts.env].v2.url}${endpoint}`,
-		headers: {
-			Authorization: opts.auth,
-			'User-Agent': `MoipNodeSDK/${pjson.version} (+https://github.com/moip/moip-sdk-node/)`,
-		},
-		method: 'POST',
-		body: payload || null,
-		form: config && config.form && payload,
-		json: !config || !config.form,
-		resolveWithFullResponse: true,
-	};
-
 	const response = await axios.request({
 		baseURL:
 			config && config.customUrl

@@ -6,20 +6,20 @@ export namespace Payment.Create {
 		fundingInstrument: {
 			method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT';
 			creditCard?: CreditCard;
-		};
-		boleto?: {
-			expirationDate: string;
-			instructionLines?: {
-				first: string;
-				second?: string;
-				third?: string;
+			boleto?: {
+				expirationDate: string;
+				instructionLines?: {
+					first: string;
+					second?: string;
+					third?: string;
+				};
+				logoUri?: string;
 			};
-			logoUri?: string;
-		};
-		onlineBankDebit?: {
-			bankNumber: '341';
-			expirationDate?: string;
-			returnUri?: string;
+			onlineBankDebit?: {
+				bankNumber: '341';
+				expirationDate?: string;
+				returnUri?: string;
+			};
 		};
 	};
 
