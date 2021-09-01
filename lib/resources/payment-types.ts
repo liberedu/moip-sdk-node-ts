@@ -16,7 +16,7 @@ export namespace Payment.Create {
 				logoUri?: string;
 			};
 			onlineBankDebit?: {
-				bankNumber: '341';
+				bankNumber: string;
 				expirationDate?: string;
 				returnUri?: string;
 			};
