@@ -22,7 +22,6 @@
 		"strictNullChecks": true,
 		"strictPropertyInitialization": false,
 		"target": "ES2018",
-		"types": ["node", "mocha"],
 		"baseUrl": ".",
 		"resolveJsonModule": true
 	},
