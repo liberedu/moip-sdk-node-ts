@@ -59,6 +59,7 @@ const connect = (opts: ConnectOpts): typeof resources => {
 	);
 };
 
+export declare type resourcesTypes = typeof resources;
 export * from './resources';
 export * from './types';
 

@@ -4,6 +4,7 @@
 	},
 	"files": [
 		"typings.d.ts",
+		"index.ts",
 	],
 	"compilerOptions": {
 		"outDir": "dist",
