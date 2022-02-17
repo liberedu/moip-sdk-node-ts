@@ -1,4 +1,11 @@
 {
+	"ts-node": {
+		"files": true
+	},
+	"files": [
+		"typings.d.ts",
+		"index.ts",
+	],
 	"compilerOptions": {
 		"outDir": "dist",
 		"module": "commonjs",
@@ -22,7 +29,6 @@
 		"strictNullChecks": true,
 		"strictPropertyInitialization": false,
 		"target": "ES2018",
-		"types": ["node", "mocha"],
 		"baseUrl": ".",
 		"resolveJsonModule": true
 	},
