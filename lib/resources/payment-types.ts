@@ -131,8 +131,9 @@ export namespace Payment.Cancel {
 }
 
 export type CreditCard = {
-	hash: string;
-	holder: {
+	hash?: string;
+	id?: string;
+	holder?: {
 		fullname: string;
 		birthdate?: string;
 		taxDocument: {
