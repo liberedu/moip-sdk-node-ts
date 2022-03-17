@@ -101,7 +101,7 @@ If you are using **import** syntax:
 
 ```javascript
 import moipSdk from 'moip-sdk-node-ts';
-const moip = moipSdk({
+const moip = moipSdk.default({
 	accessToken: 'your-access-token',
 	// token: 'your-token',
 	// key: 'your-key',
