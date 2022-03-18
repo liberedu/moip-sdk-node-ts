@@ -5,7 +5,7 @@ export namespace Payment.Create {
 		delayCapture?: boolean;
 		fundingInstrument: {
 			method: 'CREDIT_CARD' | 'BOLETO' | 'ONLINE_BANK_DEBIT';
-			creditCard?: CreditCard;
+			creditCard?: StoredCreditCard | NewCreditCard;
 			boleto?: {
 				expirationDate: string;
 				instructionLines?: {
@@ -130,31 +130,39 @@ export namespace Payment.Cancel {
 	export type Response = Payment.Create.Response;
 }
 
-export type CreditCard = {
-	hash?: string;
-	id?: string;
-	holder?: {
-		fullname: string;
-		birthdate?: string;
-		taxDocument: {
-			type: 'CPF' | 'CNPJ';
-			number: string;
-		};
-		phone: {
-			countryCode: string;
-			areaCode: string;
-			number: string;
-		};
-		billingAddress?: {
-			city: string;
-			district: string;
-			street: string;
-			streetNumber: string;
-			zipCode: string;
-			state: string;
-			country: string;
-		};
+export type StoredCreditCard = {
+  id: string;
+  hash?: string;
+  holder?: HolderInfo;
+}
+
+export type NewCreditCard = {
+  id?: string;
+  hash: string;
+  holder: HolderInfo;
+}
+
+export type HolderInfo = {
+	fullname: string;
+	birthdate?: string;
+	taxDocument: {
+		type: 'CPF' | 'CNPJ';
+		number: string;
 	};
-};
+	phone: {
+		countryCode: string;
+		areaCode: string;
+		number: string;
+	};
+	billingAddress?: {
+		city: string;
+		district: string;
+		street: string;
+		streetNumber: string;
+		zipCode: string;
+		state: string;
+		country: string;
+	};
+}
 
 export type Refund = {};
