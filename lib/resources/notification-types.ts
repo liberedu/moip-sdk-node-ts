@@ -1,5 +1,5 @@
 export type NotificationPreferences = {
-	events: string;
+	events: string[];
 	target: string;
 	media: 'WEBHOOK';
 };
