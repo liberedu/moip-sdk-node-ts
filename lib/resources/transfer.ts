@@ -10,8 +10,8 @@ const getAll = (opts: HttpOpts) => api.get(opts, '/transfers');
 const reverse = (opts: HttpOpts, _id: string) =>
 	api.post(opts, `/transfers/${_id}/reverse`);
 
-const create = (opts: HttpOpts, transfer: types.Transfer) =>
-	api.post(opts, '/transfers', transfer);
+const create = (opts: HttpOpts, transfer: types.Transfer, accessToken?: string) =>
+	api.post({ ...opts, auth: `OAuth ${accessToken}` }, '/transfers', transfer);
 
 export default {
 	getOne: getOne as unknown as OmitFirstArg<typeof getOne>,
