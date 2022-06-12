@@ -7,8 +7,10 @@ const getOne = (opts: HttpOpts, _id: string) =>
 
 const getAll = (opts: HttpOpts) => api.get(opts, '/preferences/notifications');
 
-const create = (opts: HttpOpts, preferences: types.NotificationPreferences) =>
-	api.post(opts, '/preferences/notifications', preferences);
+const create = (opts: HttpOpts, preferences: types.NotificationPreferences, appId?: string) =>  {
+	const route = appId ? `/preferences/${appId}/notifications` : '/preferences/notifications';
+	return api.post(opts, route, preferences);
+}
 
 const remove = (opts: HttpOpts, _id: string) =>
 	api.remove(opts, `/preferences/notifications/${_id}`);
